@@ -1,4 +1,4 @@
-			local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "T-R Hub | DandyWorld",IntroText = "T-R Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local tab = Window:MakeTab({
@@ -85,16 +85,12 @@ tab:AddButton({
                 local folder = v
                 runservice.Heartbeat:Connect(function()
                     for _, v in pairs(folder:GetChildren()) do
-						for _,l in pairs(v:GetChildren()) do
-							if l:IsA("Model") then
-								repeat Wait() until l
-								if not l:FindFirstChild("hl") then
-									local hlclone = esp:Clone()
-									hlclone.Adornee = l
-									hlclone.Parent = l
-								end
-							end
-						end
+                        repeat Wait() until v
+                        if not v:FindFirstChild("hl") then
+                            local hlclone = esp:Clone()
+                            hlclone.Adornee = v
+                            hlclone.Parent = v
+                        end
                     end
                 end)
             end
