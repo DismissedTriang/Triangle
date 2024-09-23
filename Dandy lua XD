@@ -56,7 +56,7 @@ esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 esp.OutlineTransparency = 1
 
 tab:AddButton({
-    Name = "Items esp",
+    Name = "Items, Monsters, And generators esp (OLD)",
     Callback = function()
 
        for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
@@ -77,15 +77,31 @@ tab:AddButton({
             end
         end
        end
-        
-    end
-})
 
-tab:AddButton({
-    Name = "Twisteds esp",
-    Callback = function()
+	   for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
+        if k:IsA("Model") then
+            local room = k
+            for _,v in pairs(room:FindFirstChild("Generators"):GetChildren()) do
+                local folder = v
+                runservice.Heartbeat:Connect(function()
+                    for _, v in pairs(folder:GetChildren()) do
+						for _,l in pairs(v:GetChildren()) do
+							if l:IsA("Model") then
+								repeat Wait() until l
+								if not l:FindFirstChild("hl") then
+									local hlclone = esp:Clone()
+									hlclone.Adornee = l
+									hlclone.Parent = l
+								end
+							end
+						end
+                    end
+                end)
+            end
+        end
+       end
 
-       for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
+	   for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
         if k:IsA("Model") then
             local room = k
             for _,v in pairs(room:FindFirstChild("Monsters"):GetChildren()) do
@@ -94,9 +110,9 @@ tab:AddButton({
                     for _, v in pairs(folder:GetChildren()) do
                         repeat Wait() until v
                         if not v:FindFirstChild("hl") then
-                            local hlclone3 = esp:Clone()
-                            hlclone3.Adornee = v
-                            hlclone3.Parent = v
+                            local hlclone = esp:Clone()
+                            hlclone.Adornee = v
+                            hlclone.Parent = v
                         end
                     end
                 end)
@@ -107,31 +123,11 @@ tab:AddButton({
     end
 })
 
-tab:AddButton({
-    Name = "Generators esp",
-    Callback = function()
-
-       for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
-        if k:IsA("Model") then
-            local room = k
-            for _,v in pairs(room:FindFirstChild("Generators"):GetChildren()) do
-                local folder = v
-                runservice.Heartbeat:Connect(function()
-                    for _, v in pairs(folder:GetChildren()) do
-                        repeat Wait() until v
-                        if not v:FindFirstChild("hl") then
-                            local hlclone2 = esp:Clone()
-                            hlclone2.Adornee = v
-                            hlclone2.Parent = v
-                        end
-                    end
-                end)
-            end
-        end
-       end
-        
-    end
-})
+local highlightN = Instance.new("Highlight")
+highlightN.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+highlightN.OutlineColor = Color3.fromRGB(255, 255, 255)
+highlightN.OutlineTransparency = 0
+highlightN.FillTransparency = 0.5
 
 tab:AddButton({
     Name = "Players esp",
