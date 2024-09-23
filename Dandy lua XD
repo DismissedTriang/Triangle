@@ -51,6 +51,12 @@ local Section = tab:AddSection({
 
 local runservice = game:GetService("RunService")
 local esp = Instance.new("Highlight")
+local bbgui = Instance.new("BillboardGui")
+local textzl = Instance.new("TextLabel")
+bbgui.StudsOffsetWorldSpace = Vector3.new(0, 1, 0)
+bbgui.Name = "ggui"
+textzl.Name = "Textzzz"
+textzl.Parent = bbgui
 esp.Name = "hl"
 esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 esp.OutlineTransparency = 1
