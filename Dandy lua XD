@@ -25,7 +25,7 @@ tab:AddSlider({
 	Max = 100,
 	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
+	Increment = 0.1,
 	ValueName = "Walk speed",
 	Callback = function(Value)
             table.speed = Value
