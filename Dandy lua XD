@@ -81,14 +81,8 @@ tab:AddButton({
     end
 })
 
-local runservice = game:GetService("RunService")
-local esp = Instance.new("Highlight")
-esp.Name = "hl"
-esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-esp.OutlineTransparency = 1
-
 tab:AddButton({
-    Name = "Monsters esp",
+    Name = "Twisteds esp",
     Callback = function()
 
        for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
@@ -100,9 +94,9 @@ tab:AddButton({
                     for _, v in pairs(folder:GetChildren()) do
                         repeat Wait() until v
                         if not v:FindFirstChild("hl") then
-                            local hlclone = esp:Clone()
-                            hlclone.Adornee = v
-                            hlclone.Parent = v
+                            local hlclone3 = esp:Clone()
+                            hlclone3.Adornee = v
+                            hlclone3.Parent = v
                         end
                     end
                 end)
@@ -113,14 +107,8 @@ tab:AddButton({
     end
 })
 
-local runservice = game:GetService("RunService")
-local esp = Instance.new("Highlight")
-esp.Name = "hl"
-esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-esp.OutlineTransparency = 1
-
 tab:AddButton({
-    Name = "Machines esp",
+    Name = "Generators esp",
     Callback = function()
 
        for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
@@ -132,9 +120,9 @@ tab:AddButton({
                     for _, v in pairs(folder:GetChildren()) do
                         repeat Wait() until v
                         if not v:FindFirstChild("hl") then
-                            local hlclone = esp:Clone()
-                            hlclone.Adornee = v
-                            hlclone.Parent = v
+                            local hlclone2 = esp:Clone()
+                            hlclone2.Adornee = v
+                            hlclone2.Parent = v
                         end
                     end
                 end)
