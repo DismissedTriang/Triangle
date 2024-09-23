@@ -356,11 +356,24 @@ Tab2:AddButton({
 Tab2:AddLabel("I Dunno if FB is miscellaneous or not")
 
 Tab2:AddButton({
-	Name = "Fullbright",
+	Name = "Infinite yield (I.Y)",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
   	end    
 })
+
+local creds = Window:MakeTab({
+	Name = "CREDITS",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+creds:AddLabel("Library made by         : ORION LIBARY")
+creds:AddLabel("Original script made by : R4yhub")
+creds:AddLabel("Modified and scripter by: DismissedTriang")
+creds:AddLabel("I modified sections, buttons, esps, and tabs. Credits to who made the script and")
+creds:AddLabel("the orion library developers/owners")
+
 
 --[[
 Name = <string> - The name of the button.
